@@ -54,16 +54,23 @@ export class PatientDataComponent implements OnInit, OnDestroy {
     this.chart = c3.generate({
       bindto: '#data-chart',
         data: {
-            x: 'x',
-            columns: dataType === 'hr' ? hrData : medData
+          x: 'x',
+          columns: dataType === 'hr' ? hrData : medData,
         },
         axis: {
-            x: {
-                type: 'timeseries',
-                tick: {
-                    format: '%Y-%m-%d'
-                }
+          x: {
+            type: 'timeseries',
+            tick: {
+              format: '%Y-%m-%d'
             }
+          }
+        },
+        grid: {
+          y: {
+            lines: [
+              {value: dataType === 'hr' ? 100 : 9, text: 'Alert Line', 'class': 'text-danger'}
+            ]
+          }
         }
     });
   }

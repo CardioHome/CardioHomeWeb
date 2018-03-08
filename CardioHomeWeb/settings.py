@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'www',
 ]
 
@@ -69,22 +70,29 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'CardioHomeWeb.wsgi.application'
-
+ASGI_APPLICATION = "CardioHomeWeb.routing.application"
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'CardioHomeWebDB',
+#         'USER': 'CardioHomeUser',
+#         'PASSWORD': 'qwertyuiop',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
+
+CACHES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'CardioHomeWebDB',
-        'USER': 'CardioHomeUser',
-        'PASSWORD': 'qwertyuiop',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'pubsub',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
