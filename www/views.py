@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 
-import remote_auth
+#import remote_auth
 
 # # Create your views here.
 # def home(request):
