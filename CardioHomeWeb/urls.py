@@ -21,7 +21,7 @@ from www.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^login', login),
-
-    url(r'', home),
+    # url(r'^login', login),
+    #
+    # url(r'', home),
 ]
