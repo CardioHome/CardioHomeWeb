@@ -1,0 +1,56 @@
+<form class="container mt-3">
+  <div class="row my-3 justify-content-center">
+    <div class="col-auto">
+      <img src="{{home.avatarSrc}}" alt="" class="avatar img-thumbnail rounded border-1">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      Current Home: {{home.name}}
+    </div>
+    <div class="col">
+      Patient: {{home.patient.name}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="firstname">Address 1</label>
+      <input type="text" [(value)]="home.address1" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="">
+      <small class="form-text text-muted">We'll never share your infomation with anyone else.</small>
+    </div>
+    <div class="col">
+      <label for="firstname">Address 1</label>
+      <input type="text" [(value)]="home.address2" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-auto">
+      <label for="zip">Zip</label>
+      <input type="text" [(value)]="home.zip" class="form-control" id="zip" aria-describedby="emailHelp" placeholder="">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col">
+      <label for="city">City</label>
+      <select class="form-control" id="city">
+        <option>Bothell</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="state">State</label>
+      <select class="form-control" id="state">
+        <option>Washington</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="tz">Time zone</label>
+      <select class="form-control" id="tz">
+        <option>UTC</option>
+      </select>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-3">Change</button>
+</form>

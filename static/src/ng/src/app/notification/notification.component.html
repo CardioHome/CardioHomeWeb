@@ -1,0 +1,13 @@
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let notification of notifications">
+    <span class="badge text-danger p-0" [hidden]="!notification.isNew">New!</span>
+    <div class="d-flex w-100 justify-content-between">
+      <h4>{{ notification.title }}</h4>
+    </div>
+
+    <p class="mb-1">{{ notification.text }}</p>
+
+    <small class="text-muted">{{ notification.time }}</small>
+  </li>
+</ul>

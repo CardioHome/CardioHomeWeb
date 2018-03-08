@@ -1,0 +1,53 @@
+<form class="container mt-3">
+  <div class="row my-3 justify-content-center">
+    <div class="col-auto">
+      <img src="{{user.avatarSrc}}" alt="" class="avatar img-thumbnail rounded border-1">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      Current Home: {{user.currentHome}}
+    </div>
+    <div class="col">
+      Role: {{user.role}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="firstname">First Name</label>
+      <input type="text" [(value)]="user.firstName" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="">
+      <small class="form-text text-muted">We'll never share your infomation with anyone else.</small>
+    </div>
+    <div class="col">
+      <label for="firstname">Last Name</label>
+      <input type="text" [(value)]="user.lastName" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="nickname">Nick Name</label>
+      <input type="text" [(value)]="user.nickName" class="form-control" id="nickname" aria-describedby="emailHelp" placeholder="">
+    </div>
+    <div class="col">
+      <label for="email">Email</label>
+      <input type="email" [(value)]="user.email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label for="tz">Time zone</label>
+      <select class="form-control" id="tz">
+        <option>UTC</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="lang">Language</label>
+      <select class="form-control" id="lang">
+        <option>English</option>
+      </select>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-3">Change</button>
+</form>

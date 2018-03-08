@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let sensor of sensors">
+    <span class="badge text-danger p-0" [hidden]="sensor.online">Offline</span>
+    <span class="badge text-info p-0" [hidden]="!sensor.online">Online</span>
+    <div class="d-flex w-100 justify-content-between">
+      <h4>{{ sensor.name }}</h4>
+    </div>
+
+    <small class="text-muted">Last online: {{ sensor.last_update }}</small>
+  </li>
+</ul>
