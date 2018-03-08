@@ -10,7 +10,7 @@ import {PatientData} from "../patient-data";
 export class PatientDataServiceService {
   patientData: Observable<PatientData>[] = [];
   private _patientData = {};
-  private ws = new $WebSocket("ws://127.0.0.1:9010/patient_data");
+  private ws = new $WebSocket("ws://" + document.location.hostname + ":9010" + "/patient_data");
   private _initData: PatientData[] = [
     {id: 0, createTime: '', dataType: 'hr', intVal1: 100, healthy:0},
     {id: 0, createTime: '', dataType: 'med', intVal1: 2, strVal: 'med1', healthy:0},
